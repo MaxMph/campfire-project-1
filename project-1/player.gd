@@ -17,7 +17,7 @@ var time: float
 
 var gun = null
 
-@onready var hand_to_gun_aim: AimModifier3D = $head/cam_holder/Camera3D/arms/hand_to_gun_l
+#@onready var hand_to_gun_aim: AimModifier3D = $head/cam_holder/Camera3D/arms/hand_to_gun_l
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -40,9 +40,9 @@ func _physics_process(delta: float) -> void:
 	
 	get_gun()
 	#$head/cam_holder/Camera3D/arms/hand_to_gun_l.target_po
-	#$head/cam_holder/Camera3D/arms/hand_to_gun_l.set_target_position(%gun_holder.global_position)
+	#$head/cam_holdermagnet r2/Camera3D/arms/hand_to_gun_l.set_target_position(%gun_holder.global_position)
 	#hand_to_gun_aim.target_position = %gun_holder.global_position
-	hand_to_gun_aim.target_position = hand_to_gun_aim.global_position + Vector3.FORWARD * 2.0
+#	hand_to_gun_aim.target_position = hand_to_gun_aim.global_position + Vector3.FORWARD * 2.0
 
 	
 	if not is_on_floor():
