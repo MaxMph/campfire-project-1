@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bjgm3i535rgvn"]
+
+[ext_resource type="Script" uid="uid://di7gdjicayr2l" path="res://guns/bullet_decal.gd" id="1_duv0e"]
+[ext_resource type="Texture2D" uid="uid://crqwxryc7n328" path="res://textures/bullet decal_blur.png" id="1_m4tgt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duv0e"]
+transparency = 1
+albedo_texture = ExtResource("1_m4tgt")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xhacu"]
+
+[node name="bullet_decal" type="Node3D" unique_id=1294884547]
+script = ExtResource("1_duv0e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=885605379]
+transform = Transform3D(0.06, 0, 0, 0, -2.6226832e-09, 0.06, 0, -0.06, -2.6226832e-09, 0, -9.7183456e-11, -0.002223298)
+material_override = SubResource("StandardMaterial3D_duv0e")
+mesh = SubResource("PlaneMesh_xhacu")
+
+[node name="Timer" type="Timer" parent="." unique_id=1629604877]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

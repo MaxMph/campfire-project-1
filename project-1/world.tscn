@@ -70,6 +70,12 @@ material_override = SubResource("StandardMaterial3D_aqk2v")
 use_collision = true
 size = Vector3(30, 2, 8)
 
+[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=459548666]
+transform = Transform3D(1, 0, 0, 0, 1.4, 0, 0, 0, 1, 0, 5.2, -11)
+material_override = SubResource("StandardMaterial3D_aqk2v")
+use_collision = true
+size = Vector3(30, 2, 8)
+
 [node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1162367338]
 transform = Transform3D(1, 0, 0, 0, 1.4, 0, 0, 0, 1, 0, 12.2, 11)
 material_override = SubResource("StandardMaterial3D_aqk2v")

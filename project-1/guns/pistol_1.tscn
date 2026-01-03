@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://xg2yaaxujmo" path="res://guns/pistol_barrel_mag.tscn" id="2_cxyyq"]
 [ext_resource type="PackedScene" uid="uid://dwallvckox45x" path="res://guns/muzzle_1.tscn" id="2_lhf1u"]
 [ext_resource type="PackedScene" uid="uid://c61y7qmmvm7cb" path="res://guns/underbarrel_laser.tscn" id="5_yhgb5"]
+[ext_resource type="AudioStream" uid="uid://b0yywxk6jpgel" path="res://audio/9mm-pistol-shot-6349.mp3" id="6_oyt12"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2napi"]
 
@@ -253,6 +254,8 @@ script = ExtResource("1_2napi")
 mag = ExtResource("2_cxyyq")
 sight = ExtResource("2_bpysr")
 muzzle = ExtResource("2_lhf1u")
+vrecoil = 0.1
+hrecoil = 0.025
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1201596880]
 transform = Transform3D(0.10604374, 0, 0, 0, 0.1497559, 0, 0, 0, 0.5527746, 0, 0.018083155, -0.24733941)
@@ -309,3 +312,8 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01572454, -0.3172531)
 
 [node name="underbarrel_laser" parent="underbarel" unique_id=356446836 instance=ExtResource("5_yhgb5")]
+
+[node name="gunshot" type="AudioStreamPlayer" parent="." unique_id=1782210996]
+stream = ExtResource("6_oyt12")
+volume_db = -5.962
+max_polyphony = 8

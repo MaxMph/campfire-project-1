@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dwallvckox45x"]
 
 [ext_resource type="Script" uid="uid://2i88n2w43u8x" path="res://guns/muzzle.gd" id="1_tn5nr"]
+[ext_resource type="AudioStream" uid="uid://cmt6jqqnt4tky" path="res://audio/silenced-gunshot-81063.mp3" id="2_1ahtq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yj153"]
 
@@ -17,3 +18,9 @@ mesh = SubResource("BoxMesh_yj153")
 
 [node name="gun_muzzle" type="Node3D" parent="." unique_id=2092135237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5161167)
+
+[node name="gunshot" type="AudioStreamPlayer" parent="." unique_id=1292020939]
+stream = ExtResource("2_1ahtq")
+volume_db = -18.0
+pitch_scale = 2.0
+max_polyphony = 4

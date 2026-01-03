@@ -9,8 +9,8 @@ var sight_pos
 @export var base_flash_size = 0.5
 
 
-@export var vrecoil = 4.0
-@export var hrecoil = 2.0
+@export var vrecoil = 0.2
+@export var hrecoil = 0.04
 @export var recoil_reset_speed = 0.4
 
 @onready var bullet = preload("res://guns/9_mm.tscn")
@@ -37,10 +37,12 @@ func shoot():
 	#$bullet_marker/Sprite3D.rotation.z = randi_range(-20, 20)
 	main.add_child.call_deferred(new_bullet)
 	muzzleflash()
-	recoil()
+	get_parent().recoil(randf_range(vrecoil * 0.8, vrecoil * 1.2), randf_range(-hrecoil, hrecoil), recoil_reset_speed)
+	$gunshot.play()
 
 func muzzleflash():
 	var newflash = flash.instantiate()
+	#var newflash = flash.instantiate()
 	newflash.max_size = base_flash_size
 	if muzzle == null:
 		$gun_muzzle.add_child(newflash)
@@ -48,7 +50,3 @@ func muzzleflash():
 		#newflash.max_size * $gun_muzzle.get_child(0).gun_muzzle.flash_mult
 		$gun_muzzle.get_child(0).gun_muzzle.add_child(newflash)
 		print("blaaaaa")
-
-
-func recoil():
-	get_parent().recoil(randf_range(vrecoil * 0.75, vrecoil * 1.5), recoil_reset_speed)

@@ -7,6 +7,7 @@ extends CharacterBody3D
 var dmg: float = 10.0
 
 @onready var ray = RayCast3D.new()
+@onready var decal = preload("res://guns/bullet_decal.tscn")
 
 var spawn_transform
 var last_pos
@@ -45,6 +46,14 @@ func _process(delta: float) -> void:
 	if ray.is_colliding():
 		if ray.get_collider().is_in_group("hittable"):
 			ray.get_collider().hit(dmg, sender)
+		var new_decal = decal.instantiate()
+		ray.get_collider().add_child(new_decal)
+		new_decal.global_position = ray.get_collision_point()
+		#new_decal.look_at(ray.get_collision_point(), ray.get_collision_normal())
+		new_decal.look_at(ray.get_collision_point() + ray.get_collision_normal(), Vector3.UP)
+		#new_decal.look_at(ray.get_collision_point() + ray.get_collision_normal(), Vector3(1, 1, 1))
+		#add_sibling(new_decal)ector3.UP
+		#look_at()
 		ray.queue_free()
 		queue_free()
 	

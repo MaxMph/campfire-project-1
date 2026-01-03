@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://raw3kldpcvj"]
+[gd_scene format=3 uid="uid://raw3kldpcvj"]
 
 [ext_resource type="Script" uid="uid://cr1iwxr7netfl" path="res://9_mm.gd" id="1_fbly0"]
 
@@ -11,16 +11,16 @@ albedo_color = Color(0.73214775, 0.56528515, 0.39452994, 1)
 transparency = 1
 albedo_color = Color(4.783, 4.1766043, 3.9350247, 0.016)
 
-[node name="9mm" type="CharacterBody3D"]
+[node name="9mm" type="CharacterBody3D" unique_id=314030161]
 script = ExtResource("1_fbly0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1087228776]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.1, 0, 0, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_8g3qp")
 mesh = SubResource("BoxMesh_8g3qp")
 
-[node name="trail" type="MeshInstance3D" parent="."]
+[node name="trail" type="MeshInstance3D" parent="." unique_id=1712238797]
 transform = Transform3D(0.046, 0, 0, 0, 0.046, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_fbly0")
 mesh = SubResource("BoxMesh_8g3qp")
